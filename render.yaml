@@ -1,0 +1,58 @@
+services:
+  - type: web
+    name: moviesoko-api
+    runtime: node
+    plan: free
+    region: frankfurt
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: TMDB_API_KEY
+        sync: false
+      - key: OMDB_API_KEY
+        sync: false
+      - key: RAPIDAPI_KEY
+        sync: false
+      - key: UTELLY_HOST
+        value: utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: APP_URL
+        sync: false
+      - key: FRONTEND_URL
+        sync: false
+      - key: WATCH_REGION
+        value: KE
+      - key: MPESA_CONSUMER_KEY
+        sync: false
+      - key: MPESA_CONSUMER_SECRET
+        sync: false
+      - key: MPESA_SHORTCODE
+        value: "174379"
+      - key: MPESA_PASSKEY
+        sync: false
+      - key: MPESA_SANDBOX_CALLBACK_URL
+        sync: false
+      - key: MPESA_CALLBACK_URL
+        sync: false
+      - key: MPESA_ENV
+        value: sandbox
+      - key: MPESA_MOVIE_PRICE
+        value: "50"
+      - key: MPESA_SANDBOX_AMOUNT
+        value: "1"
+      - key: MPESA_TEST_PHONE
+        value: "254708374149"
+      - key: VAPID_PUBLIC_KEY
+        sync: false
+      - key: VAPID_PRIVATE_KEY
+        sync: false
+      - key: AFFILIATE_NETFLIX
+        sync: false
+      - key: AFFILIATE_SHOWMAX
+        sync: false

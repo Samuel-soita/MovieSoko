@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "name": "moviesoko",
+  "buildCommand": "node scripts/vercel-build.js",
+  "outputDirectory": "frontend",
+  "headers": [
+    {
+      "source": "/sw.js",
+      "headers": [{ "key": "Cache-Control", "value": "no-cache" }]
+    }
+  ],
+  "rewrites": [
+    { "source": "/((?!.*\\.).*)", "destination": "/index.html" }
+  ]
+}
