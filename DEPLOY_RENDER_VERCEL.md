@@ -90,6 +90,8 @@ git push -u origin main
 |------|--------|
 | `RENDER_API_URL` | `https://moviesoko-api.onrender.com` |
 
+> **Important:** Value is **only the URL** — not `RENDER_API_URL=https://...`. Wrong paste breaks the site.
+
 5. Click **Deploy**
 6. Your site: `https://moviesoko.vercel.app` (or custom name)
 
