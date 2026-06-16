@@ -40,6 +40,10 @@ async function init() {
 
   try {
     const res = await fetch(`${API}/home`);
+    const ct = res.headers.get('content-type') || '';
+    if (!ct.includes('application/json')) {
+      throw new Error(`API returned ${res.status} — check RENDER_API_URL or redeploy Vercel`);
+    }
     const data = await res.json();
 
     heroes = data.heroes?.length ? data.heroes : (data.featured ? [data.featured] : []);
